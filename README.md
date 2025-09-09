@@ -2,7 +2,7 @@
 
 ¡Un pequeño homenaje animado al personaje que ama odiar la Navidad, creado puramente con HTML y CSS!
 
-![Vista Previa del Grinch]([https://github.com/Imaforbes/grinch_animado/blob/main/Screenshot%202025-09-09%20113406.png?raw=true])
+![Vista Previa del Grinch](https://github.com/Imaforbes/grinch_animado/blob/main/Screenshot%202025-09-09%20113406.png?raw=true)
 
 _Puedes crear un GIF fácilmente usando herramientas en línea como Giphy o ScreenToGif para mostrar la animación._
 
