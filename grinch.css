@@ -1,44 +1,48 @@
-:root {
-    --grinch-green: #86c92c;
-    --light-green: #e8fecc;
-    --christmas-red: #FF4742;
-    --hat-white: #EEE;
-    --dark-blue: #19235b;
-    --background-color: #16171c;
-}
+/* ============================================================================
+   PROYECTO: EL GRINCH - ANIMACIÓN CON CSS3 PURO
+   DESARROLLADOR: IMANOL FORBES / INDIESTUDIOX
+   DESCRIPCIÓN: Animación navideña utilizando keyframes, flexbox y sombras
+   ============================================================================ */
 
 body {
     min-height: 97vh;
-    background-color: var(--background-color);
+    background-color: #3351d8;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* ----------------------------------------------------------------------------
+   CONTENEDOR DEL PERSONAJE
+   ---------------------------------------------------------------------------- */
 .character {
     min-width: 300px;
     min-height: 250px;
+    background-color: #869fa7;
+    border: 20px solid #EEE;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* --- EFECTOS HOVER --- */
-.character:hover .eye {
-    background-color: var(--christmas-red);
-    transition: background-color 0.3s ease;
+.turn-to {
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
-.character:hover .red-part::before,
-.character:hover .white-ball {
-    animation-duration: 0.5s;
-}
-
-
-/* --- GORRO DE NAVIDAD --- */
+/* ----------------------------------------------------------------------------
+   GORRO DE SANTA (HAT)
+   ---------------------------------------------------------------------------- */
 .christmas-hat {
     width: 200px;
     height: 150px;
@@ -52,10 +56,10 @@ body {
 .red-part {
     width: 200px;
     height: 120px;
-    background-color: var(--christmas-red);
+    background-color: #FF4742;
     box-shadow: inset -10px -11px 0px 11px rgba(0, 0, 0, 0.05);
     border-radius: 100px 100px 0 0;
-    animation: redAndGreen-shadow 2.5s infinite ease-in-out;
+    animation-name: redAndGreen-shadow;
 }
 
 .red-part::before {
@@ -74,12 +78,12 @@ body {
 .white-part {
     width: 220px;
     height: 50px;
-    background-color: var(--hat-white);
+    background-color: #EEE;
     box-shadow: inset -4px -6px 0px 4px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     position: absolute;
     top: 100px;
-    animation: white-shadow 2.5s infinite ease-in-out;
+    animation-name: white-shadow;
 }
 
 .white-ball {
@@ -94,12 +98,13 @@ body {
     animation: shake-white-ball 1.5s infinite alternate ease-in-out;
 }
 
-
-/* --- GRINCH --- */
+/* ----------------------------------------------------------------------------
+   CUERPO Y ROSTRO DEL GRINCH
+   ---------------------------------------------------------------------------- */
 .grinch {
     width: 200px;
     height: 280px;
-    background-color: var(--grinch-green);
+    background-color: #86c92c;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -107,30 +112,30 @@ body {
     z-index: -1;
     display: flex;
     justify-content: center;
-    animation: redAndGreen-shadow 2.5s infinite ease-in-out;
+    animation-name: redAndGreen-shadow;
 }
 
 .grinch .eye {
     width: 50px;
     height: 25px;
-    background-color: var(--light-green);
+    background-color: #e8fecc;
     border-radius: 100px 100px 0 0;
     margin: 0 19px;
     position: relative;
     bottom: -100px;
     overflow: hidden;
     transform: rotate(180deg);
-    animation: move-eyes 2.8s infinite ease-in-out;
+    animation-name: move-eyes;
 }
 
 .grinch .eye .pupil {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: var(--dark-blue);
+    background-color: #19235b;
     position: absolute;
     bottom: -8px;
-    animation: move-pupil 2.8s infinite ease-in-out;
+    animation-name: move-pupil;
 }
 
 .grinch .nose {
@@ -138,41 +143,34 @@ body {
     height: 30px;
     border-radius: 20% 20% 50%;
     transform: rotate(45deg);
-    background-color: var(--dark-blue);
+    background-color: #19235b;
     position: absolute;
     bottom: 125px;
-    animation: move-nose 2.8s infinite ease-in-out;
-    animation-delay: 0.1s;
+    animation-name: move-nose;
 }
 
-.grinch .mouth {
-    width: 100px;
-    height: 15px;
-    border: 5px solid var(--dark-blue);
-    border-color: var(--dark-blue) transparent transparent transparent;
-    border-radius: 60%;
-    position: absolute;
-    bottom: 70px;
-    animation: grumpy-mouth 2.8s infinite ease-in-out;
-}
-
+/* ----------------------------------------------------------------------------
+   TITULO Y TEXTO
+   ---------------------------------------------------------------------------- */
 .name {
+    font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
     font-size: 2.2em;
-    color: var(--grinch-green);
-    text-shadow: 0 2px var(--light-green), 2px 0 var(--light-green), 0 -2px var(--light-green), -2px 0 var(--light-green), -2px 2px var(--light-green), 2px -2px var(--light-green), 2px 2px var(--light-green), -2px -2px var(--light-green);
+    color: #86c92c;
+    margin-top: 10px;
+    text-shadow: 0 2px #e8fecc, 2px 0 #e8fecc, 0 -2px #e8fecc, -2px 0 #e8fecc, 
+                 -2px 2px #e8fecc, 2px -2px #e8fecc, 2px 2px #e8fecc, -2px -2px #e8fecc;
 }
 
-
-/* --- KEYFRAMES (Animaciones) --- */
+/* ----------------------------------------------------------------------------
+   KEYFRAMES DE ANIMACIÓN CSS
+   ---------------------------------------------------------------------------- */
 @keyframes shake {
     from {
         transform: translateX(10px) rotate(-7deg);
     }
-
     50% {
         transform: translateY(4px);
     }
-
     to {
         transform: translateX(-5px) rotate(5deg);
     }
@@ -182,104 +180,67 @@ body {
     from {
         transform: translateX(20px);
     }
-
     to {
         transform: translateX(-200px);
     }
 }
 
 @keyframes redAndGreen-shadow {
-
-    from,
-    75%,
-    to {
+    from {
         box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
     }
-
-    25%,
-    50% {
+    25%, 50% {
         box-shadow: inset -10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    }
+    75%, 100% {
+        box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
     }
 }
 
 @keyframes white-shadow {
-
-    from,
-    75%,
-    to {
+    from {
         box-shadow: inset 4px -6px 0px 4px rgba(0, 0, 0, 0.05);
     }
-
-    25%,
-    50% {
+    25%, 50% {
         box-shadow: inset -4px -6px 0px 4px rgba(0, 0, 0, 0.05);
+    }
+    75%, 100% {
+        box-shadow: inset 4px -6px 0px 4px rgba(0, 0, 0, 0.05);
     }
 }
 
 @keyframes move-pupil {
-
-    from,
-    75%,
-    to {
+    from {
         left: 0;
     }
-
-    25%,
-    50% {
+    25%, 50% {
         left: 30px;
+    }
+    75%, 100% {
+        left: 0;
     }
 }
 
 @keyframes move-eyes {
-
-    from,
-    75%,
-    to {
+    from {
         transform: rotate(180deg) translateX(-15px);
     }
-
-    25%,
-    50% {
+    25%, 50% {
         transform: rotate(180deg) translateX(15px);
+    }
+    75%, 100% {
+        transform: rotate(180deg) translateX(-15px);
     }
 }
 
 @keyframes move-nose {
-
-    from,
-    75%,
-    to {
+    from {
         transform: translateX(15px) rotate(45deg);
     }
-
-    25%,
-    50% {
+    25%, 50% {
         transform: translateX(-15px) rotate(45deg);
     }
-}
-
-@keyframes grumpy-mouth {
-
-    from,
-    75%,
-    to {
-        transform: translateX(10px) rotate(-5deg);
-    }
-
-    25%,
-    50% {
-        transform: translateX(-10px) rotate(5deg);
-    }
-}
-
-
-/* --- RESPONSIVIDAD --- */
-@media (max-width: 600px) {
-    .character {
-        transform: scale(0.8);
-    }
-
-    .name {
-        font-size: 1.8em;
+    75%, 100% {
+        transform: translateX(15px) rotate(45deg);
     }
 }
