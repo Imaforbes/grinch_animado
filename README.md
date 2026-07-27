@@ -1,4 +1,5 @@
 # // THE GRINCH — PURE CSS3 & HTML5 ANIMATION
+[![Live Demo](https://img.shields.io/badge/LIVE%20DEMO-VIEW%20ANIMATION%20ONLINE-00F090?style=for-the-badge)](https://imaforbes.github.io/grinch_animado/)
 [![HTML5: Pure](https://img.shields.io/badge/HTML5-PURE-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3: Keyframes](https://img.shields.io/badge/CSS3-KEYFRAMES-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JS: Zero](https://img.shields.io/badge/JAVASCRIPT-ZERO%20DEPENDENCIES-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
@@ -7,6 +8,8 @@
 ---
 
 > **The Grinch (El Grinch)** is a creative, responsive Christmas character animation crafted entirely from scratch using pure **HTML5** and advanced **CSS3 Keyframe Animations**, featuring zero JavaScript or external library dependencies.
+
+### 👉 [CLICK HERE TO VIEW THE LIVE ANIMATION DEMO](https://imaforbes.github.io/grinch_animado/)
 
 ---
 
@@ -27,7 +30,7 @@
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run Locally
 
 No installation, build steps, or servers required:
 1. Clone the repository:
@@ -35,7 +38,7 @@ No installation, build steps, or servers required:
    git clone https://github.com/Imaforbes/grinch_animado.git
    cd grinch_animado
    ```
-2. Open **`grinch.html`** in any modern web browser (Chrome, Firefox, Safari, Edge).
+2. Open **`index.html`** in any modern web browser (Chrome, Firefox, Safari, Edge).
 
 ---
 
@@ -44,7 +47,7 @@ No installation, build steps, or servers required:
 ```text
 grinch_animado/
 ├── README.md    <-- This documentation file
-├── grinch.html  <-- Main HTML5 semantic character structure
+├── index.html   <-- Main HTML5 semantic entry point and character structure
 └── grinch.css   <-- Complete CSS3 styling and animation keyframes
 ```
 
