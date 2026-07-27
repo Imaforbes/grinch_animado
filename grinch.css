@@ -373,3 +373,87 @@ body {
         transform: scale(2.4) rotate(-45deg);
     }
 }
+
+/* ============================================================================
+   FASE 2: EFECTO DE NIEVE INVERNAL (SNOWFALL CSS3 KEYFRAMES)
+   ============================================================================ */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    transition: opacity 0.6s ease;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    user-select: none;
+    animation-name: snowfall, sway;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, ease-in-out;
+}
+
+@keyframes snowfall {
+    0% {
+        top: -20px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.85;
+    }
+    100% {
+        top: 102vh;
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(35px);
+    }
+}
+
+.controls-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.snow-button {
+    background-color: #14171E;
+    color: #00F0FF;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.88em;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: 2px solid #00F0FF;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.25);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.snow-button:hover {
+    background-color: #00F0FF;
+    color: #14171E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.45);
+}

@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="grinch.css">
-    <title>El Grinch // CSS Animation + Interactive Heart</title>
+    <title>El Grinch // CSS Animation + Heart & Winter Snowfall</title>
 </head>
 <body>
+    <!-- FASE 2: Contenedor de nieve invernal en el fondo -->
+    <div id="snow-container" class="snow-container"></div>
+
     <div class="character">
         <div class="christmas-hat">
             <div class="red-part turn-to"></div>
@@ -32,17 +35,25 @@
         
         <!-- Controles Interactivos Estilo Hallmark / Industrial Editorial -->
         <div class="heart-controls">
-            <button id="heart-btn" class="heart-button" title="Haz clic para aumentar 1 talla el corazón">
-                ❤️ HACER CRECER CORAZÓN [1x]
-            </button>
+            <div class="controls-row">
+                <button id="heart-btn" class="heart-button" title="Haz clic para aumentar 1 talla el corazón">
+                    ❤️ HACER CRECER CORAZÓN [1x]
+                </button>
+                <button id="snow-btn" class="snow-button" title="Activar o desactivar efecto de nieve en el fondo">
+                    ❄️ NIEVE INVERNAL [ON]
+                </button>
+            </div>
             <div class="heart-status" id="heart-status">
                 STATE: <span>GRINCH MALHUMORADO (1x)</span>
             </div>
         </div>
     </div>
 
-    <!-- Script de interactividad ligero (Vanilla JS) -->
+    <!-- Script de interactividad (Vanilla JS) -->
     <script>
+        /* ====================================================================
+           FASE 1: LÓGICA DEL CORAZÓN DEL GRINCH (3 TALLAS)
+           ==================================================================== */
         const heart = document.getElementById('grinch-heart');
         const btn = document.getElementById('heart-btn');
         const statusSpan = document.querySelector('#heart-status span');
@@ -68,17 +79,57 @@
             }
         }
 
-        // Clic en el botón editorial
         btn.addEventListener('click', () => {
             const nextSize = currentSize >= 3 ? 1 : currentSize + 1;
             updateHeart(nextSize);
         });
 
-        // Clic directo sobre el corazón rojo en el pecho
         heart.addEventListener('click', () => {
             const nextSize = currentSize >= 3 ? 1 : currentSize + 1;
             updateHeart(nextSize);
         });
+
+        /* ====================================================================
+           FASE 2: GENERADOR DE NIEVE INVERNAL CON KEYFRAMES CSS3
+           ==================================================================== */
+        const snowContainer = document.getElementById('snow-container');
+        const snowBtn = document.getElementById('snow-btn');
+        const SNOWFLAKE_COUNT = 30;
+        let snowEnabled = true;
+
+        function createSnowflakes() {
+            for (let i = 0; i < SNOWFLAKE_COUNT; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.innerHTML = '❄';
+                
+                // Propiedades aleatorias para crear profundidad y naturalidad
+                const leftPos = Math.random() * 100; // Porcentaje del ancho
+                const duration = 6 + Math.random() * 8; // Entre 6 y 14 segundos
+                const delay = Math.random() * 6; // Retraso inicial entre 0 y 6 seg
+                const size = 10 + Math.random() * 14; // Tamaño entre 10px y 24px
+                const opacity = 0.3 + Math.random() * 0.6; // Opacidad entre 0.3 y 0.9
+
+                flake.style.left = `${leftPos}%`;
+                flake.style.animationDuration = `${duration}s, ${duration * 0.6}s`;
+                flake.style.animationDelay = `${delay}s, ${delay * 0.5}s`;
+                flake.style.fontSize = `${size}px`;
+                flake.style.opacity = opacity;
+
+                snowContainer.appendChild(flake);
+            }
+        }
+
+        snowBtn.addEventListener('click', () => {
+            snowEnabled = !snowEnabled;
+            snowContainer.style.opacity = snowEnabled ? '1' : '0';
+            snowBtn.innerHTML = snowEnabled ? '❄️ NIEVE INVERNAL [ON]' : '❄️ NIEVE INVERNAL [OFF]';
+            snowBtn.style.borderColor = snowEnabled ? '#00F0FF' : '#FF4742';
+            snowBtn.style.color = snowEnabled ? '#00F0FF' : '#FF4742';
+        });
+
+        // Inicializar nevada
+        createSnowflakes();
     </script>
 </body>
 </html>
