@@ -457,3 +457,78 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 240, 255, 0.45);
 }
+
+/* ============================================================================
+   FASE 2 / 3: GLOBO DE DIÁLOGO INTERACTIVO CON FRASES CÉLEBRES DEL GRINCH
+   ============================================================================ */
+.speech-bubble {
+    position: absolute;
+    top: 12px;
+    right: -55px;
+    max-width: 230px;
+    background-color: #FFFFFF;
+    color: #14171E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 0.86em;
+    line-height: 1.38;
+    padding: 12px 16px;
+    border: 3px solid #14171E;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    z-index: 20;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    animation: popBubble 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 45px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    filter: drop-shadow(0 3px 0 #14171E);
+}
+
+.speech-bubble:hover {
+    transform: scale(1.06) rotate(1deg);
+}
+
+@keyframes popBubble {
+    0% {
+        transform: scale(0.6) translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.quote-button {
+    background-color: #14171E;
+    color: #FFDE00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.88em;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: 2px solid #FFDE00;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(255, 222, 0, 0.25);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.quote-button:hover {
+    background-color: #FFDE00;
+    color: #14171E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 222, 0, 0.45);
+}
