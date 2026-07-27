@@ -2,31 +2,43 @@
 [![Live Demo](https://img.shields.io/badge/LIVE%20DEMO-VIEW%20ANIMATION%20ONLINE-00F090?style=for-the-badge)](https://imaforbes.github.io/grinch_animado/)
 [![HTML5: Pure](https://img.shields.io/badge/HTML5-PURE-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3: Keyframes](https://img.shields.io/badge/CSS3-KEYFRAMES-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JS: Zero](https://img.shields.io/badge/JAVASCRIPT-ZERO%20DEPENDENCIES-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
+[![JS: Interactive Heart](https://img.shields.io/badge/JAVASCRIPT-INTERACTIVE%20HEART-00F0FF?style=for-the-badge&logo=javascript&logoColor=black)]()
 [![Design: Editorial Craft](https://img.shields.io/badge/DESIGN-EDITORIAL%20CRAFT-1A1D24?style=for-the-badge)]()
 
 ---
 
-> **The Grinch (El Grinch)** is a creative, responsive Christmas character animation crafted entirely from scratch using pure **HTML5** and advanced **CSS3 Keyframe Animations**, featuring zero JavaScript or external library dependencies.
+> **The Grinch (El Grinch)** is a creative, responsive Christmas character animation crafted entirely from scratch using pure **HTML5**, advanced **CSS3 Keyframe Animations**, and an interactive **3-Size Holiday Heart** mechanism.
 
 ### 👉 [CLICK HERE TO VIEW THE LIVE ANIMATION DEMO](https://imaforbes.github.io/grinch_animado/)
+
+---
+
+## ❤️ Interactive Feature: *"His Heart Grew 3 Sizes!"*
+
+Inspired by the iconic Grinch story, users can interact with the character directly:
+* **Interactive Glowing Heart:** Click directly on the Grinch's red chest heart or use the Hallmark editorial control bar (`❤️ HACER CRECER CORAZÓN [1x]`).
+* **3-Stage Size Progression:**
+  * **`1x` (Default):** Grinch Malhumorado *(Grumpy Grinch)* — subtle heartbeat pulse.
+  * **`2x` (Click 1):** Sintiéndo... Sentimientos *(Feeling Feelings)* — vibrant `#00F0FF` telemetry aura.
+  * **`3x` (Click 2):** ¡Espíritu Navideño al 100%! *(100% Christmas Spirit)* — fast heartbeat animation and radiant holiday glow.
 
 ---
 
 ## 🎨 Visual & Technical Design
 
 * **Winter Maritime Palette:** Seasonal sea-blue `#3351d8` viewport background contrasted with a slate `#869fa7` character container, making the Grinch's signature lime-green (`#86c92c`) and Santa red (`#FF4742`) colors pop vividly.
-* **Fluid Keyframe Choreography:** Synchronized animations for hat shaking, eye/pupil tracking, nose movement, and dynamic shadow pulsing.
+* **Fluid Keyframe Choreography:** Synchronized animations for hat shaking, eye/pupil tracking, nose movement, and heartbeat pulsing.
 * **Expressive Typography:** Utilizes the Google Font `'Rock Salt'` for an authentic, playful holiday title.
 
 ---
 
-## ✨ Features & Animations
+## ✨ Keyframe Animations
 
-1. **`shake` & `shake-white-ball`**: Dynamic oscillating rotation for the Santa hat tip and white pom-pom.
-2. **`move-eyes` & `move-pupil`**: Periodic lateral tracking movement simulating character awareness.
-3. **`move-nose`**: Subtle rotational twitching for facial expression.
-4. **`redAndGreen-shadow` & `white-shadow`**: Smooth inset box-shadow shifts that create a 3D ambient lighting effect.
+1. **`heartbeat` & `heartbeat-fast`**: Organic pulsing animation for the Grinch's glowing heart across all 3 sizes.
+2. **`shake` & `shake-white-ball`**: Dynamic oscillating rotation for the Santa hat tip and white pom-pom.
+3. **`move-eyes` & `move-pupil`**: Periodic lateral tracking movement simulating character awareness.
+4. **`move-nose`**: Subtle rotational twitching for facial expression.
+5. **`redAndGreen-shadow` & `white-shadow`**: Smooth inset box-shadow shifts that create a 3D ambient lighting effect.
 
 ---
 
@@ -47,7 +59,7 @@ No installation, build steps, or servers required:
 ```text
 grinch_animado/
 ├── README.md    <-- This documentation file
-├── index.html   <-- Main HTML5 semantic entry point and character structure
+├── index.html   <-- Main HTML5 semantic entry point, character structure & Heart logic
 └── grinch.css   <-- Complete CSS3 styling and animation keyframes
 ```
 
@@ -55,7 +67,7 @@ grinch_animado/
 
 ## 👨‍💻 Author & Credits
 
-* **Imanol Forbes** / **IndieStudioX** — *CSS Art, Keyframe Animation & Frontend Design*.
+* **Imanol Forbes** / **IndieStudioX** — *CSS Art, Keyframe Animation & Interactive Frontend Design*.
 
 ---
 *All rights reserved © 2026. Licensed under MIT for educational and creative use.*

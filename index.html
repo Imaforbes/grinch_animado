@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="grinch.css">
-    <title>El Grinch // CSS Animation</title>
+    <title>El Grinch // CSS Animation + Interactive Heart</title>
 </head>
 <body>
     <div class="character">
@@ -14,6 +14,7 @@
             <div class="white-part turn-to"></div>
             <div class="white-ball"></div>
         </div>
+        
         <div class="grinch turn-to">
             <div class="eye turn-to">
                 <div class="pupil turn-to"></div>
@@ -22,8 +23,62 @@
                 <div class="pupil turn-to"></div>
             </div>
             <div class="nose turn-to"></div>
+            
+            <!-- FASE 1: El Corazón del Grinch (hacer clic para crecer 3 tallas) -->
+            <div class="heart size-1" id="grinch-heart" title="¡Haz clic para hacer crecer el corazón del Grinch!"></div>
         </div>
+        
         <h2 class="name">El Grinch</h2>
+        
+        <!-- Controles Interactivos Estilo Hallmark / Industrial Editorial -->
+        <div class="heart-controls">
+            <button id="heart-btn" class="heart-button" title="Haz clic para aumentar 1 talla el corazón">
+                ❤️ HACER CRECER CORAZÓN [1x]
+            </button>
+            <div class="heart-status" id="heart-status">
+                STATE: <span>GRINCH MALHUMORADO (1x)</span>
+            </div>
+        </div>
     </div>
+
+    <!-- Script de interactividad ligero (Vanilla JS) -->
+    <script>
+        const heart = document.getElementById('grinch-heart');
+        const btn = document.getElementById('heart-btn');
+        const statusSpan = document.querySelector('#heart-status span');
+
+        let currentSize = 1;
+
+        function updateHeart(size) {
+            currentSize = size;
+            heart.className = `heart size-${size}`;
+            
+            if (size === 1) {
+                btn.innerHTML = '❤️ HACER CRECER CORAZÓN [1x]';
+                statusSpan.style.color = '#FF4742';
+                statusSpan.textContent = 'GRINCH MALHUMORADO (1x)';
+            } else if (size === 2) {
+                btn.innerHTML = '❤️ HACER CRECER CORAZÓN [2x]';
+                statusSpan.style.color = '#00F0FF';
+                statusSpan.textContent = 'SINTIENDO... SENTIMIENTOS (2x)';
+            } else if (size === 3) {
+                btn.innerHTML = '🔄 ¡CRECIÓ 3 TALLAS! (REINICIAR)';
+                statusSpan.style.color = '#00F090';
+                statusSpan.textContent = '¡ESPÍRITU NAVIDEÑO AL 100%! 🎄✨';
+            }
+        }
+
+        // Clic en el botón editorial
+        btn.addEventListener('click', () => {
+            const nextSize = currentSize >= 3 ? 1 : currentSize + 1;
+            updateHeart(nextSize);
+        });
+
+        // Clic directo sobre el corazón rojo en el pecho
+        heart.addEventListener('click', () => {
+            const nextSize = currentSize >= 3 ? 1 : currentSize + 1;
+            updateHeart(nextSize);
+        });
+    </script>
 </body>
 </html>

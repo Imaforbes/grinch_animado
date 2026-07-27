@@ -244,3 +244,132 @@ body {
         transform: translateX(15px) rotate(45deg);
     }
 }
+
+/* ============================================================================
+   FASE 1: EL CORAZÓN DEL GRINCH & CONTROLES EDITORIALES INTERACTIVOS
+   ============================================================================ */
+.heart {
+    width: 26px;
+    height: 26px;
+    background-color: #FF4742;
+    position: absolute;
+    bottom: 60px;
+    right: 48px;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 12px rgba(255, 71, 66, 0.6);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    cursor: pointer;
+    animation: heartbeat 1.8s infinite ease-in-out;
+    z-index: 5;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: #FF4742;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -13px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    right: -13px;
+}
+
+/* Escalas del corazón (1x, 2x, 3x) */
+.heart.size-1 {
+    transform: scale(0.9) rotate(-45deg);
+    box-shadow: 0 0 10px rgba(255, 71, 66, 0.5);
+}
+
+.heart.size-2 {
+    transform: scale(1.6) rotate(-45deg);
+    box-shadow: 0 0 22px #FF4742, 0 0 40px rgba(255, 71, 66, 0.8);
+}
+
+.heart.size-3 {
+    transform: scale(2.4) rotate(-45deg);
+    box-shadow: 0 0 35px #FF4742, 0 0 65px #FF0000, 0 0 100px #FF4742;
+    animation: heartbeat-fast 0.8s infinite ease-in-out;
+}
+
+/* Panel de control estilo Hallmark / Industrial Editorial */
+.heart-controls {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.heart-button {
+    background-color: #14171E;
+    color: #00F090;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #00F090;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 240, 144, 0.25);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.heart-button:hover {
+    background-color: #00F090;
+    color: #14171E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 240, 144, 0.45);
+}
+
+.heart-status {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78em;
+    color: #EEE;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.heart-status span {
+    color: #FF4742;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(0.9) rotate(-45deg);
+    }
+    15% {
+        transform: scale(1.05) rotate(-45deg);
+    }
+    30% {
+        transform: scale(0.9) rotate(-45deg);
+    }
+}
+
+@keyframes heartbeat-fast {
+    0%, 100% {
+        transform: scale(2.4) rotate(-45deg);
+    }
+    15% {
+        transform: scale(2.75) rotate(-45deg);
+    }
+    30% {
+        transform: scale(2.4) rotate(-45deg);
+    }
+}
