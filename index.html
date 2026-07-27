@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="grinch.css">
-    <title>El Grinch // CSS Animation + Heart, Quotes & Winter Snowfall</title>
+    <title>El Grinch // CSS Animation + Hallmark Portfolio Frame</title>
 </head>
 <body>
+    <!-- FASE 5: Marco Editorial de Portafolio (Hallmark Craft Frame) -->
+    <header class="hallmark-header">
+        <div class="hallmark-bar">
+            <span class="badge badge-dark">PROJECT: GRINCH CSS ART</span>
+            <span class="badge badge-blue">ENGINE: PURE CSS3 KEYFRAMES</span>
+            <span class="badge badge-green">DEV: IMANOL FORBES</span>
+            <a href="https://github.com/Imaforbes/grinch_animado" target="_blank" rel="noopener noreferrer" class="badge badge-yellow badge-link">
+                GITHUB REPO ↗
+            </a>
+        </div>
+    </header>
+
     <!-- FASE 3: Contenedor de nieve invernal en el fondo -->
     <div id="snow-container" class="snow-container"></div>
 
@@ -121,7 +133,7 @@
         function nextQuote() {
             quoteIndex = (quoteIndex + 1) % GRINCH_QUOTES.length;
             speechBubble.style.animation = 'none';
-            speechBubble.offsetHeight; // Reflow para reiniciar animación CSS
+            speechBubble.offsetHeight;
             speechBubble.textContent = GRINCH_QUOTES[quoteIndex];
             speechBubble.style.animation = 'popBubble 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         }

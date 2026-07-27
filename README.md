@@ -3,13 +3,23 @@
 [![HTML5: Pure](https://img.shields.io/badge/HTML5-PURE-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3: Keyframes](https://img.shields.io/badge/CSS3-KEYFRAMES-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JS: Interactive Suite](https://img.shields.io/badge/JAVASCRIPT-HEART%20%7C%20QUOTES%20%7C%20SNOW-00F0FF?style=for-the-badge&logo=javascript&logoColor=black)]()
-[![Design: Editorial Craft](https://img.shields.io/badge/DESIGN-EDITORIAL%20CRAFT-1A1D24?style=for-the-badge)]()
+[![Design: Hallmark Craft](https://img.shields.io/badge/DESIGN-HALLMARK%20EDITORIAL-1A1D24?style=for-the-badge)]()
 
 ---
 
-> **The Grinch (El Grinch)** is a creative, responsive Christmas character animation crafted entirely from scratch using pure **HTML5**, advanced **CSS3 Keyframe Animations**, an interactive **3-Size Holiday Heart**, **Speech Bubble Quotes**, and an atmospheric **Winter Snowfall Engine**.
+> **The Grinch (El Grinch)** is a creative, responsive Christmas character animation crafted entirely from scratch using pure **HTML5**, advanced **CSS3 Keyframe Animations**, an interactive **3-Size Holiday Heart**, **Speech Bubble Quotes**, an atmospheric **Winter Snowfall Engine**, and a minimalist **Hallmark Portfolio Frame**.
 
 ### 👉 [CLICK HERE TO VIEW THE LIVE ANIMATION DEMO](https://imaforbes.github.io/grinch_animado/)
+
+---
+
+## 🏷️ Hallmark Editorial Craft Frame (Phase 5)
+
+A sleek, responsive top navigation bar designed with dark glassmorphism (`backdrop-filter: blur(10px)`) immediately showcases the developer's technical credentials to recruiters and peers:
+* `[PROJECT: GRINCH CSS ART]`
+* `[ENGINE: PURE CSS3 KEYFRAMES]`
+* `[DEV: IMANOL FORBES]`
+* `[GITHUB REPO ↗]` — Direct clickable link back to the repository source code.
 
 ---
 
@@ -70,7 +80,7 @@ No installation, build steps, or servers required:
 ```text
 grinch_animado/
 ├── README.md    <-- This documentation file
-├── index.html   <-- Main HTML5 semantic entry point, character structure & 3 interactive phases
+├── index.html   <-- Main HTML5 semantic entry point, character structure & interactive suite
 └── grinch.css   <-- Complete CSS3 styling and animation keyframes
 ```
 

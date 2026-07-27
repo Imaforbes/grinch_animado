@@ -532,3 +532,94 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 222, 0, 0.45);
 }
+
+/* ============================================================================
+   FASE 5: MARCO EDITORIAL DE PORTAFOLIO (HALLMARK CRAFT FRAME)
+   ============================================================================ */
+.hallmark-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 23, 30, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.hallmark-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.76em;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.badge-dark {
+    background: #14171E;
+    color: #EEE;
+    border: 1px solid #3d4352;
+}
+
+.badge-blue {
+    background: #1572B6;
+    color: #FFF;
+    border: 1px solid #3695db;
+}
+
+.badge-green {
+    background: #00F090;
+    color: #14171E;
+    border: 1px solid #00F090;
+    font-weight: 800;
+}
+
+.badge-yellow {
+    background: #FFDE00;
+    color: #14171E;
+    border: 1px solid #FFDE00;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-yellow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(255, 222, 0, 0.5);
+    background: #ffe633;
+}
+
+body {
+    padding-top: 55px;
+}
+
+@media (max-width: 600px) {
+    .badge {
+        font-size: 0.65em;
+        padding: 4px 8px;
+    }
+    .hallmark-header {
+        padding: 8px 10px;
+    }
+}
